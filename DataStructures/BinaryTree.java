@@ -1,5 +1,8 @@
 package DataStructures;
 
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class BinaryTree {
@@ -82,4 +85,66 @@ public class BinaryTree {
         if(root == null) return 1;
         return Math.max(height(root.left), height(root.right)) + 1;
     }
+
+    public void preOrder(){
+        preOrder(root);
+    }
+
+    private void preOrder(Node root){
+
+        if(root == null) return;
+        System.out.print(root.val + " --> ");
+
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private void postOrder(Node root){
+
+        if(root == null) return;
+        
+
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.val + " --> ");
+    }
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    private void inOrder(Node root){
+
+        if(root == null) return;
+        
+
+        inOrder(root.left);
+        System.out.print(root.val + " --> ");
+        inOrder(root.right);
+        
+    }
+    public void levelOrder(){
+        levelOrder(root);
+    }
+
+    private void levelOrder(Node root){
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            Node nn = queue.poll();
+            System.out.print(nn.val+" --> ");
+            if(nn.left != null) queue.add(nn.left);
+            if(nn.right != null) queue.add(nn.right);
+
+        }
+        
+    }
+
+   
+
+
 }
