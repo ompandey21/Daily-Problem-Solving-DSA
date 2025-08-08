@@ -1,37 +1,31 @@
 package DataStructures;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
-public class BinaryTree {
+public class BinarySearchTree {
     class Node{
         int val;
         Node left, right;
-
-
     }
-    Scanner sc = new Scanner(System.in);
+
     private Node root;
-    
 
-
-    public BinaryTree() {
-        root = CreateTree();
+    BinarySearchTree(int[] in){
+        root = CreateTree(in, 0, in.length - 1);
     }
-    private Node CreateTree(){
-        int data = sc.nextInt();
+
+    private Node CreateTree( int[] in, int si, int ei){
+        if(si > ei) return null;
+        int mid = (si + ei)/2;
+
         Node nn = new Node();
-        nn.val = data;
-        boolean hlc = sc.nextBoolean(); // has left child
-        if(hlc){    
-            nn.left = CreateTree();
-        }
-        boolean hrc = sc.nextBoolean(); // has right child
-        if(hrc){
-            nn.right = CreateTree();
-        }
+        nn.val = in[mid];
+        nn.left = CreateTree(in, si, mid -1);
+        nn.right = CreateTree(in, mid+1, ei);
         return nn;
     }
+
     public void display() {
         display(root);
     }
@@ -140,11 +134,6 @@ public class BinaryTree {
 
         }
         
-    }
-
-    
-
-   
-
+    } 
 
 }
