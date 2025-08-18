@@ -36,5 +36,6 @@ public class LevelOrderInput {
                 q.add(node);
             }
         }
+        sc.close();
     }
 }
