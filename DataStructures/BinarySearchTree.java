@@ -45,7 +45,7 @@ public class BinarySearchTree {
             return;
         }
         String s = "";
-        s = " <--" + nn.val + "--> ";
+        s = " <-- " + nn.val + " --> ";
         if(nn.left != null){
             s = nn.left.val + s;
         }
