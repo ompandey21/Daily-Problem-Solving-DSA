@@ -2,43 +2,23 @@ import java.util.PriorityQueue;
 
 public class KthMaxElement {
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     class Solution {
-        public ListNode mergeKLists(ListNode[] lists) {
-            PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
+        public int findKthLargest(int[] nums, int k) {
+            PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-            for (int i = 0; i < lists.length; i++) {
-                if (lists[i] != null)
-                    pq.add(lists[i]);
+            for (int i = 0; i < k; i++) {
+                pq.add(nums[i]);
             }
 
-            ListNode dummy = new ListNode(0);
-            ListNode temp = dummy;
+            for (int i = k; i < nums.length; i++) {
+                int cur = nums[i];
+                if (cur > pq.peek()) {
+                    pq.poll();
+                    pq.add(cur);
+                }
 
-            while (!pq.isEmpty()) {
-                ListNode cur = pq.poll();
-                dummy.next = cur;
-                dummy = dummy.next;
-                if (cur.next != null)
-                    pq.add(cur.next);
             }
-            return temp.next;
+            return pq.peek();
 
         }
     }
