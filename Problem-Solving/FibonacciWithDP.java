@@ -14,6 +14,6 @@ public class FibonacciWithDP {
         }
         int f1 = Fib(n - 1, dp);
         int f2 = Fib(n - 2, dp);
-        return dp[n] = f2 + f1;
+        return dp[n] = f1 + f2;
     }
 }
