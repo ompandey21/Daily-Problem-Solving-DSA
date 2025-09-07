@@ -10,6 +10,7 @@ public class HostelVisit {
 			if(type == 1) addDistance(heap, sc.nextInt(), sc.nextInt(), k);
 			if(type == 2) System.out.println(heap.peek());
 		}
+        sc.close();
     }
 	public static void addDistance(PriorityQueue<Long> pq, int a, int b, int k){
 		long distance = (long)a * a + (long)b * b;
@@ -20,6 +21,7 @@ public class HostelVisit {
 			pq.poll();
 			pq.add(distance);
 		}
+        
 	}
 
 	

@@ -21,6 +21,7 @@ public class CF_Journey {
             }
             System.out.println(res);
         }
+        sc.close();
 
     }
 }

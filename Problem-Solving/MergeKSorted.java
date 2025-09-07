@@ -14,5 +14,6 @@ public class MergeKSorted {
 		while(!ans.isEmpty()){
 			System.out.print(ans.poll() + " ");
 		}
+		sc.close();
     }
 }

@@ -10,9 +10,9 @@ public class LevelOrderInput {
     }
     private Node root;
     public LevelOrderInput(){
-        createTree();
+        createTree(root);
     }
-    public void createTree(){
+    public void createTree(Node root){
         Scanner sc = new Scanner(System.in);
         Queue <Node> q = new LinkedList<>();
         Node nn = new Node();
