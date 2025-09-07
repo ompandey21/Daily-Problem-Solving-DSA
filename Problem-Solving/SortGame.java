@@ -37,5 +37,6 @@ public class SortGame {
             Pair cur = pq.poll();
             System.out.println(cur.name + " " + cur.salary);
         }
+        sc.close();
     }
 }
