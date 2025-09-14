@@ -7,7 +7,7 @@ public class HashMapClient {
         map.put("USA", 330);    
         map.put("China", 1400);
         map.put("India", 136); 
-        map.put("UK", 67);
+        map.put("UK", 69);
 
         System.out.println(map);
     }
