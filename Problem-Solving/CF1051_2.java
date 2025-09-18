@@ -49,6 +49,8 @@ public class CF1051_2 {
             }
             out.append("\n");
         }
+
         System.out.print(out);
+        br.close();
     }
 }
