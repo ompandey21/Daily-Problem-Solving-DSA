@@ -13,7 +13,6 @@ public class RunningMedian {
             
             for (int i = 0; i < n; i++) {
                 int num = sc.nextInt();
-                
                 // Insert into appropriate heap
                 if (maxHeap.isEmpty() || num <= maxHeap.peek()) {
                     maxHeap.add(num);
