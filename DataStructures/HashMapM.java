@@ -2,7 +2,7 @@ package DataStructures;
 
 import java.util.ArrayList;
 
-public class HashMap<K, V> {
+public class HashMapM<K, V> {
     class Node {
         K key;
         V value;
@@ -18,12 +18,12 @@ public class HashMap<K, V> {
     private int size = 0;
     private ArrayList<Node> buckets = new ArrayList<>();
 
-    public HashMap(int n) {
+    public HashMapM(int n) {
         for (int i = 0; i < n; i++) {
             buckets.add(null);
         }
     }
-    public HashMap() {
+    public HashMapM() {
         this(4);
     }
     public void put(K key, V value) {
