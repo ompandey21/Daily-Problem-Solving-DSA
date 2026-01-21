@@ -1,12 +1,13 @@
 package Algorithms.BitMasking.PowerSet.CF_1325D;
 
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int xor = sc.nextInt();
-        int sum = sc.nextInt();
+        long xor = sc.nextLong();
+        long sum = sc.nextLong();
         if(xor > sum || Math.abs(xor - sum) % 2 != 0){
             System.out.println(-1);
             return;
@@ -20,8 +21,8 @@ public class Main {
             System.out.println(sum);
             return;
         }
-        int x = (sum - xor)/2;
-        int y = xor ^ x;
+        long x = (sum - xor)/2;
+        long y = xor ^ x;
         if(y == xor + x){
             System.out.println(2);
             System.out.println((xor + x) + " " + x);

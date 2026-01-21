@@ -7,7 +7,7 @@ class Sol {
         String prev = "";
   
         for(String s : words){
-            String hs = hash(s);
+            String hs = s;
             if(prev.equals(hs)){ 
                 continue;
             }
